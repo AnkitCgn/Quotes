@@ -1,8 +1,10 @@
 const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
+ 
 const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById('loader');
+
 
 let apiQuotes = [];
 
@@ -49,12 +51,14 @@ async function getQuotes() {
       apiQuotes = await response.json();
       newQuote();
     } catch (error) {
-       console.log(error)
+        // Catch Error Here
     }
 }
 
+ 
 // Event Listeners
-newQuoteBtn.addEventListener('click', newQuote); 
+newQuoteBtn.addEventListener('click', newQuote);
+ 
 
 // On Load
 getQuotes();
